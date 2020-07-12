@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsDragstripProject</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+li {
+  float: left;
+}
 
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
   <body>
+    <ul>
+      <li><a class="active" href="/">Home</a></li>
+      <% if session[:driver_id].nil? %>
+        <li><%= link_to "Sign Up", new_driver_path %></li>
+        <li><%= link_to "Log In", signin_path %></li>
+      <% else %>
+        <li><%= link_to "#{@driver.name}'s Profile", driver_path(@driver) %></li>
+        <li><%= link_to "Log Out", '/logout', method: 'post' %></li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
