@@ -1,0 +1,19 @@
+<%= form_for @track do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :location %>
+    <br>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :weather %>
+    <br>
+    <%= f.text_field :weather %>
+    <br>
+    <%= f.label :distance, "Distance (miles)" %>
+    <br>
+    <%= f.text_field :distance%>
+    <br>
+    <%= f.submit %>
+<% end %>

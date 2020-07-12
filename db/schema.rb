@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_184041) do
   end
 
   create_table "tracks", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.string "weather"
     t.integer "distance"

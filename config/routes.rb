@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
   resources :drivers, only: [:new, :create, :show]
+  resources :tracks, only: [:index, :show, :new, :create]
 end
