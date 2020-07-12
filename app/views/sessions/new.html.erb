@@ -1,7 +1,10 @@
 <h2>Please Sign In Below</h2>
 <%= form_tag signin_path do %>
-    Name: <%= text_field_tag :driver %>
+    Username: <%= text_field_tag :username %>
     <br>
     Password: <%= password_field_tag :password %>
     <%= submit_tag "Sign In" %>
 <% end %>
+<br>
+<h4><%= link_to "Log in with GitHub", '/auth/github' %></h4>
+<p>Please make sure your GitHub username matches your username.</p>

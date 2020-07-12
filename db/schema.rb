@@ -13,7 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_07_12_184041) do
 
   create_table "drivers", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "age"
     t.integer "experience"
     t.string "country"
