@@ -1,0 +1,23 @@
+<%= form_for @driver do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :age %>
+    <br>
+    <%= f.number_field :age %>
+    <br>
+    <%= f.label :experience, "How many years have you been racing?" %>
+    <br>
+    <%= f.number_field :experience %>
+    <br>
+    <%= f.label :country, "What country were you born in?" %>
+    <br>
+    <%= f.text_field :country %>
+    <br>
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit %>
+<% end %>
