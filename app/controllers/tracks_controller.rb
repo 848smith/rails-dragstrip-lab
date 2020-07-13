@@ -7,8 +7,12 @@ class TracksController < ApplicationController
     end
 
     def create
-        @track = Track.create(track_params)
-        redirect_to tracks_path
+        @track = Track.new(track_params)
+        if @track.save
+            redirect_to tracks_path
+        else
+            render 'new'
+        end
     end
 
     def index

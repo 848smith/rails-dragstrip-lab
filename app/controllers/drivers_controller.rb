@@ -11,9 +11,13 @@ class DriversController < ApplicationController
     end
 
     def create
-        @driver = Driver.create(driver_params)
-        session[:driver_id] = @driver.id
-        redirect_to driver_path(@driver)
+        @driver = Driver.new(driver_params)
+        if @driver.save
+            session[:driver_id] = @driver.id
+            redirect_to driver_path(@driver)
+        else
+            render 'new'
+        end
     end
     
     def show
