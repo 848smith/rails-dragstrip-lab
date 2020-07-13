@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_07_12_184041) do
     t.integer "driver_id"
     t.integer "track_id"
     t.integer "track_time"
-    t.boolean "winner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_184041) do
     t.string "location"
     t.string "weather"
     t.decimal "distance"
+    t.boolean "raced", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

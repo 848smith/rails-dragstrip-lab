@@ -5,6 +5,7 @@ class CreateTracks < ActiveRecord::Migration[6.0]
       t.string :location
       t.string :weather
       t.decimal :distance
+      t.boolean :raced, default: false
 
       t.timestamps
     end

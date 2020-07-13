@@ -2,3 +2,5 @@
 <p><%= @track.location %></p>
 <p><%= @track.weather %></p>
 <p><%= @track.distance %></p>
+<br>
+<%= link_to '<button type="button">Race</button>'.html_safe, new_track_race_path(@track) %>

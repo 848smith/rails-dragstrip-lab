@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     resources :vehicles, only: [:index, :show, :new]
   end
   resources :vehicles, only: [:show, :create]
-  resources :tracks, only: [:index, :show, :new, :create]
+  resources :tracks, only: [:index, :new, :create]
+  resources :tracks, only: [:show] do
+    resources :races, only: [:new, :create]
+  end
 end
