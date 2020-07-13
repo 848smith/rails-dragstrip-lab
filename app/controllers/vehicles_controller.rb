@@ -16,6 +16,10 @@ class VehiclesController < ApplicationController
         redirect_to driver_vehicles_path(@driver)
     end
 
+    def show
+        @vehicle = Vehicle.find_by(id: params[:id])
+    end
+
     private
 
     def vehicle_params
