@@ -7,12 +7,17 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @driver = Driver.find_by(username: params[:username])
-        if @driver.authenticate(params[:password])
-            session[:driver_id] = @driver.id
-            redirect_to driver_path(@driver)
+        if @driver = Driver.find_by(username: params[:username])
+            if @driver.authenticate(params[:password])
+                session[:driver_id] = @driver.id
+                redirect_to driver_path(@driver)
+            else
+                flash[:error] = 'Invalid password'
+                render 'new'
+            end
         else
-            render 'new', notice: "Password is incorrect"
+            flash[:error] = 'User does not exist'
+            render 'new'
         end
     end
 

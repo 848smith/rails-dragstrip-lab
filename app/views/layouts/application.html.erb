@@ -37,7 +37,7 @@ li a:hover {
         <li><%= link_to "#{@driver.username}'s Profile", driver_path(@driver) %></li>
         <li><%= link_to "Tracks", tracks_path %></li>
         <li><%= link_to "My Races", driver_races_path(@driver) %></li>
-        <li><%= link_to "Log Out", '/logout', method: 'post' %></li>
+        <li><%= link_to "Log Out", signout_path  %></li>
       <% end %>
     </ul>
     <%= yield %>

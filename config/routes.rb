@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   match '/auth/:provider/callback', to: 'sessions#auth', via: [:get, :post]
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
-  post '/logout', to: 'sessions#destroy'
+  get '/signout', to: 'sessions#destroy'
   resources :drivers, only: [:new, :create, :edit, :update]
   resources :drivers, only: [:show] do
     resources :vehicles, only: [:index, :show, :new, :destroy]
