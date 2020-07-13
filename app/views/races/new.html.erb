@@ -1,0 +1,12 @@
+<p>Thank you for racing at <%= @track.name %>!</p>
+<br>
+<%= form_for @race do |f| %>
+    
+    <%= f.hidden_field :track, value: @track.name %>
+    <br>
+    <%= f.label :track_time, "Please submit your official time:" %>
+    <%= f.text_field :track_time %>    
+    <br>
+    <br>
+    <%= f.submit "Submit Time" %>
+<% end %>

@@ -3,6 +3,6 @@
 <br>
 <br>
 <% @driver.vehicles.each do |vehicle| %>
-    <li><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model%> <%= link_to "View", vehicle_path(vehicle) %></li>
+    <li><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model%> <%= link_to "View", vehicle_path(vehicle) %></li><li><%= link_to "Remove", driver_vehicle_path(@driver, vehicle), method: 'delete' %></li>
     <br><br><br><br>
 <% end %>

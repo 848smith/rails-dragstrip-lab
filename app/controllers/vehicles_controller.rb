@@ -20,6 +20,12 @@ class VehiclesController < ApplicationController
         @vehicle = Vehicle.find_by(id: params[:id])
     end
 
+    def destroy
+        @vehicle = Vehicle.find_by(id: params[:id])
+        @vehicle.delete
+        redirect_to driver_vehicles_path(@driver)
+    end
+
     private
 
     def vehicle_params

@@ -1,0 +1,5 @@
+<h1>Your Races</h1>
+<br>
+<% @races.each do |race| %>
+    <p><%= race.track_time %> seconds - <%= race.track.name %></p>
+<% end %>

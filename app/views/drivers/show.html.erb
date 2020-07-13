@@ -2,6 +2,8 @@
 <p>Age: <%= @driver.age %></p>
 <p>Experience: <%= @driver.experience %></p>
 <p>Country: <%= @driver.country %></p>
+<%= link_to "Edit Info", edit_driver_path(@driver) %>
+<br>
 <br>
 <br>
 <%= link_to "Vehicles >>", driver_vehicles_path(@driver) %>
