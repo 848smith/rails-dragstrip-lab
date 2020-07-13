@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
     layout "application"
     before_action :driver_layout
+    before_action :is_logged_in?, only: [:new, :create]
     skip_before_action :driver_layout, only: [:auth]
 
     def new

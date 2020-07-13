@@ -1,6 +1,7 @@
 class VehiclesController < ApplicationController
     layout "application"
     before_action :driver_layout
+    before_action :current_user
 
     def index
         

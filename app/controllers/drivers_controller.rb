@@ -2,6 +2,7 @@ class DriversController < ApplicationController
     layout 'application'
     before_action :driver_layout, only: [:home]
     before_action :require_login, only: [:show]
+    before_action :current_user
 
     def home
     end

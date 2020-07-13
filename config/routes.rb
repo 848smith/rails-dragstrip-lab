@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     resources :races, only: [:new, :create]
   end
   resources :races, only: [:create]
+  post '/drivers/:id/vehicles/:id', to: 'vehicles#destroy'
 end
