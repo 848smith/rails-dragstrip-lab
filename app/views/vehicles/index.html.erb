@@ -1,5 +1,8 @@
 <h1>All Your Vehicles</h1>
+<%= link_to "Add a Vehicle", new_driver_vehicle_path(@driver) %>
 <br>
-<% @vehicles.each do |vehicle| %>
-    <li><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model%></li>
+<br>
+<% @driver.vehicles.each do |vehicle| %>
+    <li><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model%> <%= link_to "View", vehicle_path(vehicle) %></li>
+    <br><br><br><br>
 <% end %>

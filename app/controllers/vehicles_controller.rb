@@ -3,7 +3,7 @@ class VehiclesController < ApplicationController
     before_action :driver_layout
 
     def index
-        @driver.vehicles = Vehicle.all
+        
     end
 
     def new
@@ -11,8 +11,9 @@ class VehiclesController < ApplicationController
     end
 
     def create
-        @vehicle = Vehicle.create(vehicle_params)
-        redirect_to vehicles_path
+        vehicle = Vehicle.create(vehicle_params)
+        @driver.vehicles << vehicle
+        redirect_to driver_vehicles_path(@driver)
     end
 
     private

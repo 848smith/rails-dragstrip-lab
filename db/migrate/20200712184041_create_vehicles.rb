@@ -6,6 +6,7 @@ class CreateVehicles < ActiveRecord::Migration[6.0]
       t.string :model
       t.string :trim
       t.integer :horsepower
+      t.integer :driver_id
 
       t.timestamps
     end

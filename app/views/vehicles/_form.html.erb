@@ -1,0 +1,23 @@
+<%= form_for @vehicle do |f| %>
+    <%= f.label :year %>
+    <br>
+    <%= f.text_field :year %>
+    <br>
+    <%= f.label :make %>
+    <br>
+    <%= f.text_field :make %>
+    <br>
+    <%= f.label :model %>
+    <br>
+    <%= f.text_field :model %>
+    <br>
+    <%= f.label :trim %>
+    <br>
+    <%= f.text_field :trim %>
+    <br>
+    <%= f.label :horsepower %>
+    <br>
+    <%= f.number_field :horsepower %>
+    <br>
+    <%= f.submit %>
+<% end %>

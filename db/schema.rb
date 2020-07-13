@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_184041) do
     t.string "model"
     t.string "trim"
     t.integer "horsepower"
+    t.integer "driver_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

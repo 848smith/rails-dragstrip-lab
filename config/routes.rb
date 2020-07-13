@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
-  resources :drivers, only: [:new, :create, :show]
+  resources :drivers, only: [:new, :create]
+  resources :drivers, only: [:show] do
+    resources :vehicles, only: [:index, :show, :new]
+  end
+  resources :vehicles, only: [:show, :create]
   resources :tracks, only: [:index, :show, :new, :create]
-  resources :vehicles, only: [:index, :show, :new, :create]
 end
