@@ -15,6 +15,10 @@ class TracksController < ApplicationController
         @tracks = Track.all
     end
 
+    def show
+        @track = Track.find_by(id: params[:id])
+    end
+
     private
 
     def track_params

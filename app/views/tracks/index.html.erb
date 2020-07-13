@@ -1,5 +1,7 @@
 <h1>All Tracks</h1>
-<p><%= link_to "Add New Track", new_track_path %></h3>
+<p><%= link_to "Add New Track", new_track_path %></p>
+<br>
+<br>
 <% @tracks.each do |track| %>
     <h2><%= link_to track.name, track_path(track) %></h2>
 <% end %>

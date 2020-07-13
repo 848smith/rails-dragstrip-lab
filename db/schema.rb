@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_184041) do
     t.string "name"
     t.string "location"
     t.string "weather"
-    t.integer "distance"
+    t.decimal "distance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

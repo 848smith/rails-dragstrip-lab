@@ -1,0 +1,5 @@
+<h1>All Your Vehicles</h1>
+<br>
+<% @vehicles.each do |vehicle| %>
+    <li><%= vehicle.year %> <%= vehicle.make %> <%= vehicle.model%></li>
+<% end %>

@@ -4,7 +4,7 @@ class CreateTracks < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :location
       t.string :weather
-      t.integer :distance
+      t.decimal :distance
 
       t.timestamps
     end
