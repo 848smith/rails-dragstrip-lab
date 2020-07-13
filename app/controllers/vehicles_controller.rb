@@ -11,9 +11,13 @@ class VehiclesController < ApplicationController
     end
 
     def create
-        vehicle = Vehicle.create(vehicle_params)
-        @driver.vehicles << vehicle
-        redirect_to driver_vehicles_path(@driver)
+        @vehicle = Vehicle.new(vehicle_params)
+        @driver.vehicles << @vehicle
+        if @vehicle.save 
+            redirect_to driver_vehicles_path(@driver)
+        else
+            render 'new'
+        end
     end
 
     def show

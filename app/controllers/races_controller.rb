@@ -16,7 +16,7 @@ class RacesController < ApplicationController
     end
 
     def index
-        @races = @driver.races
+        @races = @driver.races.fastest_times
     end
 
     private
